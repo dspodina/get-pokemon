@@ -1,0 +1,48 @@
+:root {
+  --white-color: #f5efe6;
+  --blue-color: #495ca7;
+  --yellow-color: #fbc902;
+  --green-color: #07c550;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--yellow-color);
+  color: black;
+}
+
+#input-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 300px;
+  height: 40px;
+  border: none;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  background: #495ca7;
+  color: var(--white-color);
+  border: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#logo {
+  width: 250px;
+  padding: 20px;
+}
