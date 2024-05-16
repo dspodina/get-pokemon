@@ -1,14 +1,13 @@
-const getPokemonApi = async () => {
+const getPokemonApi = async (id) => {
   try {
-    const res = await fetch("https://pokeapi.co/api/v2/pokemon/${id}");
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     if (res.ok) {
       const data = await res.json();
-      console.log(data);
       return data;
     }
-    throw new Error("Failed to fetch the pokemon");
+    throw new Error("Pokemon not found");
   } catch (err) {
-    console.log(err);
+    console.error(`Failed to fetch the pokemon with ${id}`);
   }
 };
 
