@@ -20,6 +20,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0;
+}
+
+a {
+  color: var(--yellow-color);
+}
+
+#logo {
+  width: 250px;
+  padding: 20px;
 }
 
 #main-container {
@@ -32,12 +42,14 @@ body {
   flex: 1;
 }
 
+/* INPUT BLOCK AND BUTTONS  */
+
 #input-block {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 360px;
+  width: 480px;
 }
 
 input {
@@ -65,17 +77,14 @@ button {
   letter-spacing: 1px;
 }
 
-#logo {
-  width: 250px;
-  padding: 20px;
-}
+/* DATA RENDERING CONTAINER  */
 
 #container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  width: 360px;
+  justify-content: space-between;
+  width: 480px;
   background: var(--white-color);
   border-radius: 10px;
   margin: 40px auto;
@@ -90,6 +99,7 @@ button {
   font-family: "Oswald", sans-serif;
   font-size: 28px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 #container img {
@@ -98,17 +108,24 @@ button {
   margin: 10px;
 }
 
-#abilities {
+#abilities, #stats {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+#ability-list, #statistics-list {
+  margin-bottom: 40px;
+}
+
+#statistics-el, #abilities-el {
+  font-size: 16px;
+  text-transform: capitalize;
   margin-bottom: 10px;
 }
 
-#abilities-list {
-  font-size: 16px;
-  text-transform: capitalize;
-}
+/* FOOTER */
 
 footer {
   width: 100%;
@@ -117,9 +134,38 @@ footer {
   color: var(--white-color);
   text-align: left;
   padding: 20px;
-  position: relative;
+  margin-top: auto;
 }
 
-a {
-  color: var(--yellow-color);
+
+@media screen and (max-width: 600px) {
+  #container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  #input-block {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  input, button {
+    width: 100%;
+    border-radius: 0;
+    margin: 5px 0;
+  }
+  
+  button {
+    border-radius: 0 0 5px 5px;
+  }
+  
+  #main-container {
+    padding: 20px;
+  }
+  
+  #logo {
+    max-width: 100%;
+    height: auto;
+  }
 }

@@ -4,7 +4,7 @@ const createAbilities = (abilities) => {
 
   abilities.forEach((ability) => {
     const item = document.createElement("li");
-    item.id = "abilities-list"
+    item.id = "abilities-el"
     item.innerText = ability.ability.name;
     list.append(item);
   });
