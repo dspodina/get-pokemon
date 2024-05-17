@@ -82,7 +82,7 @@ button {
   padding: 30px;
 }
 
-#error {
+.error {
   margin-top: 20px;
 }
 
@@ -117,7 +117,7 @@ footer {
   color: var(--white-color);
   text-align: left;
   padding: 20px;
-  position: relative; /* Ensure it's positioned relative to the body */
+  position: relative;
 }
 
 a {

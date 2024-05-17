@@ -7,6 +7,9 @@ import updatePokemonDom from "../components/updatePokemonDom.js";
 const getPokemonHandler = async (e) => {
   const value = Number(dom.input.value);
 
+   //   check if PokemonDom exist
+   const pokemonDomExist = dom.root.querySelector("#container");
+
   //   check if the value already exist
   if (data.oldId === value) {
     return;
@@ -15,6 +18,9 @@ const getPokemonHandler = async (e) => {
   //   check if the value has a valid ID
   const isValidId = value > 0 && value < 1280;
   if (!isValidId) {
+    pokemonDomExist.remove();
+    // dom.input.value = "";
+    data.oldId = null;
     dom.error.className = "error";
     dom.error.innerText = "Pokemon doesn't exist";
     dom.root.append(dom.error);
@@ -30,8 +36,6 @@ const getPokemonHandler = async (e) => {
   //   get Pokemon data
   const pokemonData = await getPokemonApi(value);
 
-  //   check if PokemonDom exist
-  const pokemonDomExist = dom.root.querySelector("#container");
   if (pokemonDomExist) {
     updatePokemonDom(pokemonDomExist, pokemonData);
   } else {
